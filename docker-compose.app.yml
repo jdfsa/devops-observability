@@ -1,0 +1,5 @@
+services:
+  petclinic_app:
+    build: .
+    ports:
+      - 15000:5000

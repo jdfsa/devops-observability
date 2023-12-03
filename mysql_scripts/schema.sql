@@ -1,0 +1,4 @@
+CREATE DATABASE petclinic;
+CREATE USER 'petclinic'@'%' IDENTIFIED BY 'petclinic';
+GRANT ALL PRIVILEGES ON *.* TO 'petclinic'@'%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
