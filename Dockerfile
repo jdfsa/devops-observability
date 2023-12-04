@@ -11,8 +11,5 @@ FROM eclipse-temurin:17-jre-jammy
 ARG JAR_FILE=/usr/app/target/*.jar
 COPY --from=build $JAR_FILE /app/runner.jar
 ENV SERVER_PORT 5000
-#COPY ./app/wait-for-db.sh /usr/wait-for-db.sh
-#RUN chmod +x /usr/wait-for-db.sh
 EXPOSE 5000
-#ENTRYPOINT ./wait-for-db.sh db:13306 -- java -jar /app/runner.jar
 ENTRYPOINT java -jar /app/runner.jar

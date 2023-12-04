@@ -21,6 +21,14 @@ services:
         condition: service_healthy
         #condition: service_completed_successfully
     restart: unless-stopped
+  prometheus:
+    extends:
+      file: docker-compose.metrics.yml
+      service: prometheus
+  grafana:
+    extends:
+      file: docker-compose.metrics.yml
+      service: grafana
 
 volumes:
   '.container_data_mysql':
